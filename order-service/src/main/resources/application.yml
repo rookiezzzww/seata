@@ -24,7 +24,8 @@ seata:
   service:
     vgroup-mapping:
       default_tx_group: default
-  data-source-proxy-mode: XA #seata事务模式，AT模式不支持分布式事务，XA模式支持分布式事务
+  data-source-proxy-mode: AT #seata事务模式,AT模式为添加了undo_log表和全局锁
+#  data-source-proxy-mode: XA #seata事务模式,XA模式为XA协议支持的二阶段提交
 logging:
   pattern:
     dateformat: HH:mm:ss:SSS
